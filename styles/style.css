@@ -325,6 +325,13 @@
   animation: sparksOpacity 0.3s 0.3s ease-in;
 }
 
+.heart__button,
+.like__button,
+.save__button,
+.ok__button {
+  cursor: pointer;
+}
+
 @supports ((text-stroke: 1px var(--text-shadow__color)) or (-webkit-text-stroke: 1px var(--text-shadow__color);
 )) {
   .card__logo {
