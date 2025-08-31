@@ -77,7 +77,7 @@
   width: 100%;
   height: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover; 
+  object-fit: cover;
   object-position: right;
 }
 
@@ -115,11 +115,8 @@
   right: 25px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  text-shadow: 
-  -1px 0 var(--text-shadow__color), 
-  0 1px var(--text-shadow__color), 
-  1px 0 var(--text-shadow__color), 
-  0 -1px var(--text-shadow__color);
+  text-shadow: -1px 0 var(--text-shadow__color), 0 1px var(--text-shadow__color),
+    1px 0 var(--text-shadow__color), 0 -1px var(--text-shadow__color);
 }
 
 .card__text {
@@ -321,14 +318,15 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: scaleHeart 0.3s 0.1s ease-in ;
+  animation: scaleHeart 0.3s 0.1s ease-in;
 }
 
 .like-icon.is-liked .sparks {
   animation: sparksOpacity 0.3s 0.3s ease-in;
 }
 
-@supports ((text-stroke: 1px var(--text-shadow__color)) or (-webkit-text-stroke: 1px var(--text-shadow__color);)) {
+@supports ((text-stroke: 1px var(--text-shadow__color)) or (-webkit-text-stroke: 1px var(--text-shadow__color);
+)) {
   .card__logo {
     -webkit-text-stroke: 1px var(--text-shadow__color);
     text-stroke: 1px var(--text-shadow__color);
