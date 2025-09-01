@@ -17,6 +17,7 @@
   font-variation-settings: "wght" var(--weight-main-text);
   background-image: var(--background);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
@@ -29,19 +30,19 @@
 }
 
 .logo {
-  font-family: var(--accent-font), Arial, sans-serif;
+  font-family: var(--accent-font), fantasy, serif;
   text-transform: uppercase;
 }
 
 .header .logo {
   font-size: var(--header__logo__font-size);
-  margin: var(--header__padding) auto 0;
+  margin: var(--header-logo__padding) auto 0;
 }
 
 .title {
-  font-family: var(--accent-font), Arial, sans-serif;
+  font-family: var(--accent-font), fantasy, serif;
   font-size: var(--title__font-size);
-  margin: 20px auto var(--header__padding);
+  margin: 20px auto var(--header-title__padding);
   text-transform: uppercase;
 }
 
@@ -81,31 +82,31 @@
   object-position: right;
 }
 
-.blank-page_img {
+.bright-filter {
   filter: brightness(200%);
 }
 
-.doubt_img {
+.grayscale-filter {
   filter: grayscale(0.9);
 }
 
-.pirfect_img {
+.saturate-bright-filter {
   filter: saturate(180%) brightness(150%);
 }
 
-.support_img {
+.h-rotate-filter {
   filter: hue-rotate(-70deg);
 }
 
-.decisions_img {
+.invert-filter {
   filter: invert(0.7);
 }
 
-.concentration_img {
+.multiply-filter {
   filter: brightness(200%) grayscale(1) opacity(0.2);
 }
 
-.now_img {
+.blur-filter {
   filter: blur(18px);
 }
 
@@ -117,6 +118,7 @@
   mix-blend-mode: hard-light;
   text-shadow: -1px 0 var(--text-shadow__color), 0 1px var(--text-shadow__color),
     1px 0 var(--text-shadow__color), 0 -1px var(--text-shadow__color);
+  font-size: var(--card-logo__font-size);
 }
 
 .card__text {
@@ -135,11 +137,12 @@
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy, serif;
   font-size: var(--button__font-size);
 }
 
 .heart__button {
+  display: flex;
   block-size: 39px;
   inline-size: 39px;
   background-color: var(--main-color);
@@ -159,22 +162,23 @@
   background-color: transparent;
   align-self: end;
   margin-block: 25px;
-  margin-inline: 12px 25px;
+  margin-inline: 6px 25px;
 }
 
 .save__button {
   background-color: var(--main-color);
-  max-block-size: 55px;
-  max-inline-size: 335px;
+  max-block-size: 84px;
+  inline-size: 335px;
   display: flex;
-  gap: 8px;
+  justify-content: space-between;
   margin: 50px auto 100px;
-  padding: 17px 20px;
+  padding-block: 17px;
+  padding-inline: 20px;
 }
 
 .save__button .tape_svg {
-  block-size: 20px;
-  inline-size: 20px;
+  block-size: 21px;
+  inline-size: 21px;
   align-self: center;
   color: var(--main-color);
   mix-blend-mode: difference;
@@ -182,6 +186,7 @@
 
 .save__button .button__text {
   text-wrap: nowrap;
+  align-self: center;
 }
 
 .colored_svg {
@@ -201,6 +206,11 @@
   display: grid;
 }
 
+.dialog[open]::backdrop {
+  background-color: black;
+  opacity: 0.7;
+}
+
 .dialog .tape_svg {
   grid-column: 1 / 2;
   block-size: 39px;
@@ -208,7 +218,7 @@
 }
 
 .dialog__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy, serif;
   font-size: 14px;
   grid-column: 2 / 3;
   margin-inline-start: 20px;
@@ -267,6 +277,8 @@
 }
 
 .like-icon {
+  justify-self: center;
+  align-self: center;
   transform-origin: center;
 }
 
@@ -344,7 +356,9 @@
 @media (width < 376px) {
   .save__button {
     flex-direction: column;
-    max-block-size: 84px;
+    block-size: 84px;
+    inline-size: 306px;
+    align-content: space-between;
     padding: 17px 20px;
   }
 
